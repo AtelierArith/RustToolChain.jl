@@ -17,7 +17,6 @@ const PLATFORM_MAPPINGS = [
     # Linux - GNU libc
     ("aarch64-unknown-linux-gnu", ("aarch64", "linux", "gnu")),
     ("x86_64-unknown-linux-gnu", ("x86_64", "linux", "gnu")),
-    #=
     ("i686-unknown-linux-gnu", ("i686", "linux", "gnu")),
     ("arm-unknown-linux-gnueabi", ("armv7l", "linux", "gnu")),
     ("arm-unknown-linux-gnueabihf", ("armv7l", "linux", "gnu")),
@@ -32,7 +31,6 @@ const PLATFORM_MAPPINGS = [
     # Linux - musl libc
     ("aarch64-unknown-linux-musl", ("aarch64", "linux", "musl")),
     ("x86_64-unknown-linux-musl", ("x86_64", "linux", "musl")),
-    ("riscv64gc-unknown-linux-musl", ("riscv64", "linux", "musl")),
     ("loongarch64-unknown-linux-musl", ("loongarch64", "linux", "musl")),
 
     # Windows - MSVC
@@ -49,10 +47,6 @@ const PLATFORM_MAPPINGS = [
 
     # FreeBSD
     ("x86_64-unknown-freebsd", ("x86_64", "freebsd", nothing)),
-
-    # NetBSD
-    ("x86_64-unknown-netbsd", ("x86_64", "netbsd", nothing)),
-    =#
 ]
 
 function rust_triplet_to_platform(triplet::String)

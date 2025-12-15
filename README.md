@@ -21,13 +21,6 @@ RustToolChains.jl is a Julia package that provides Rust toolchains (especially `
 
 ```julia
 using Pkg
-Pkg.add("RustToolChains")
-```
-
-Or, to use the development version:
-
-```julia
-using Pkg
 Pkg.add(url="https://github.com/AtelierArith/RustToolChains.jl.git")
 ```
 

@@ -233,3 +233,23 @@ os = "linux"
     [[RustToolChain.download]]
     sha256 = "216a1c6d178e0494ac488f3310e600ef17c62ce38d43e9b14557d1f16f3637f7"
     url = "https://static.rust-lang.org/dist/rust-1.91.0-riscv64gc-unknown-linux-gnu.tar.gz"
+[[RustToolChain]]
+arch = "s390x"
+git-tree-sha1 = "323be219d0335225a4634db12510a7ac856d8926"
+lazy = true
+libc = "glibc"
+os = "linux"
+
+    [[RustToolChain.download]]
+    sha256 = "e2cda4e86f68e3d4ca9df4f9d80d53fc34a555a96012fceefa4190a388e987d4"
+    url = "https://static.rust-lang.org/dist/rust-1.91.0-s390x-unknown-linux-gnu.tar.gz"
+[[RustToolChain]]
+arch = "loongarch64"
+git-tree-sha1 = "0515d200cbf18fc57740d81ad0f08916fe1e982b"
+lazy = true
+libc = "glibc"
+os = "linux"
+
+    [[RustToolChain.download]]
+    sha256 = "8121c8d7d9152a835c84bf6b586c107ae582ed051780d37cb1e6f4f9bdad23aa"
+    url = "https://static.rust-lang.org/dist/rust-1.91.0-loongarch64-unknown-linux-gnu.tar.gz"

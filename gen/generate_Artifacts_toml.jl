@@ -22,7 +22,7 @@ const PLATFORM_MAPPINGS = [
     ("riscv64gc-unknown-linux-gnu", Platform("riscv64", "linux")),
 
     # Linux - musl libc
-    ("i686-unknown-linux-musl", Platform("i686", "linux"; libc="musl")),
+    # ("i686-unknown-linux-musl", Platform("i686", "linux"; libc="musl")),
     ("x86_64-unknown-linux-musl", Platform("x86_64", "linux"; libc="musl")),
     ("aarch64-unknown-linux-musl", Platform("aarch64", "linux"; libc="musl")),
     ("arm-unknown-linux-musleabihf", Platform("armv6l", "linux"; libc="musl")),
@@ -30,7 +30,7 @@ const PLATFORM_MAPPINGS = [
 
     # FreeBSD
     ("x86_64-unknown-freebsd", Platform("x86_64", "freebsd")),
-    ("aarch64-unknown-freebsd", Platform("aarch64", "freebsd")),
+    # ("aarch64-unknown-freebsd", Platform("aarch64", "freebsd")),
 
     # Windows
     ("i686-pc-windows-msvc", Platform("i686", "windows")),

@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
     tags:
       - '*'
   pull_request:
@@ -21,10 +20,18 @@ jobs:
           - '1'
         os:
           - ubuntu-latest
-          - macos-latest
+          - macos-13
           - windows-latest
         arch:
           - x64
+        include:
+          # Apple Silicon (ARM64)
+          - os: macos-latest
+            arch: aarch64
+            version: 'lts'
+          - os: macos-latest
+            arch: aarch64
+            version: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v2

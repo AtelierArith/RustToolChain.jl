@@ -15,24 +15,22 @@ const PLATFORM_MAPPINGS = [
     ("x86_64-apple-darwin", ("x86_64", "macos", nothing)),
 
     # Linux - GNU libc
-    ("aarch64-unknown-linux-gnu", ("aarch64", "linux", "gnu")),
-    ("x86_64-unknown-linux-gnu", ("x86_64", "linux", "gnu")),
+    ("aarch64-unknown-linux-gnu", ("aarch64", "linux", "glibc")),
+    ("x86_64-unknown-linux-gnu", ("x86_64", "linux", "glibc")),
+    ("i686-unknown-linux-gnu", ("i686", "linux", "glibc")),
+    ("arm-unknown-linux-gnueabi", ("armv6l", "linux", "glibc")),
+    ("arm-unknown-linux-gnueabihf", ("armv6l", "linux", "glibc")),
+    ("armv7-unknown-linux-gnueabihf", ("armv7l", "linux", "glibc")),
+    ("powerpc-unknown-linux-gnu", ("powerpc64le", "linux", "glibc")),
+    ("powerpc64-unknown-linux-gnu", ("powerpc64le", "linux", "glibc")),
+    ("powerpc64le-unknown-linux-gnu", ("powerpc64le", "linux", "glibc")),
+    ("riscv64gc-unknown-linux-gnu", ("riscv64", "linux", "glibc")),
+    ("s390x-unknown-linux-gnu", ("s390x", "linux", "glibc")),
+    ("loongarch64-unknown-linux-gnu", ("loongarch64", "linux", "glibc")),
     #=
-    ("i686-unknown-linux-gnu", ("i686", "linux", "gnu")),
-    ("arm-unknown-linux-gnueabi", ("armv7l", "linux", "gnu")),
-    ("arm-unknown-linux-gnueabihf", ("armv7l", "linux", "gnu")),
-    ("armv7-unknown-linux-gnueabihf", ("armv7l", "linux", "gnu")),
-    ("powerpc-unknown-linux-gnu", ("powerpc64le", "linux", "gnu")),
-    ("powerpc64-unknown-linux-gnu", ("powerpc64le", "linux", "gnu")),
-    ("powerpc64le-unknown-linux-gnu", ("powerpc64le", "linux", "gnu")),
-    ("riscv64gc-unknown-linux-gnu", ("riscv64", "linux", "gnu")),
-    ("s390x-unknown-linux-gnu", ("s390x", "linux", "gnu")),
-    ("loongarch64-unknown-linux-gnu", ("loongarch64", "linux", "gnu")),
-
     # Linux - musl libc
     ("aarch64-unknown-linux-musl", ("aarch64", "linux", "musl")),
     ("x86_64-unknown-linux-musl", ("x86_64", "linux", "musl")),
-    ("riscv64gc-unknown-linux-musl", ("riscv64", "linux", "musl")),
     ("loongarch64-unknown-linux-musl", ("loongarch64", "linux", "musl")),
 
     # Windows - MSVC
@@ -49,9 +47,6 @@ const PLATFORM_MAPPINGS = [
 
     # FreeBSD
     ("x86_64-unknown-freebsd", ("x86_64", "freebsd", nothing)),
-
-    # NetBSD
-    ("x86_64-unknown-netbsd", ("x86_64", "netbsd", nothing)),
     =#
 ]
 

@@ -20,12 +20,11 @@ jobs:
           - '1'
         os:
           - ubuntu-latest
-          - macos-13
           - windows-latest
         arch:
           - x64
         include:
-          # Apple Silicon (ARM64)
+          # macOS Apple Silicon (ARM64)
           - os: macos-latest
             arch: aarch64
             version: 'lts'

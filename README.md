@@ -13,11 +13,9 @@ RustToolChains.jl is a Julia package that provides Rust toolchains (especially `
 
 ## Supported Platforms
 
-- **Linux**: x86_64, i686, aarch64, armv7l, powerpc64le, riscv64, s390x, loongarch64 (glibc/musl)
+- **Linux**: x86_64 (glibc, musl), aarch64 (glibc, musl), i686 (glibc, musl)
 - **macOS**: x86_64, aarch64
-- **Windows**: x86_64, i686, aarch64
-- **FreeBSD**: x86_64
-- **NetBSD**: x86_64
+- **Windows**: x86_64, aarch64
 
 ## Installation
 
@@ -104,14 +102,16 @@ This package uses Julia's Artifacts system to automatically download and manage 
 ```
 RustToolChains.jl/
 ├── src/
-│   └── RustToolChains.jl    # Main module
+│   └── RustToolChains.jl           # Main Julia module
 ├── examples/
-│   ├── hello/                # Sample Rust project
-│   └── run.jl                # Example runner
+│   ├── hello/                      # Example Rust project
+│   └── run.jl                      # Julia script demonstrating usage
 ├── gen/
-│   └── generate_Artifacts_toml.jl  # Artifacts.toml generation script
-├── Artifacts.toml            # Artifact definitions
-└── Project.toml              # Package definition
+│   └── generate_Artifacts_toml.jl  # Script to generate Artifacts.toml
+├── test/
+│   └── runtests.jl                 # Julia test script
+├── Artifacts.toml                  # List of artifact dependencies
+└── Project.toml                    # Julia package manifest
 ```
 
 ## License

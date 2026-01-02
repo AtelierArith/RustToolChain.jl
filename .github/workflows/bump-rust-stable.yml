@@ -13,7 +13,7 @@ jobs:
   bump:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # 1) README から現在のバージョンを取得
       - name: Get current version from README

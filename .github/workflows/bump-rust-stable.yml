@@ -91,7 +91,7 @@ jobs:
       # 8) 変更があれば PR 作成
       - name: Create pull request
         if: steps.check.outputs.needs_update == 'true' && steps.diff.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: bump-rust-stable-${{ steps.rust.outputs.version }}
           title: "Bump Rust stable toolchain to ${{ steps.rust.outputs.version }}"

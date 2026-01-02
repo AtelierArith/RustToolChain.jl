@@ -1,0 +1,73 @@
+name: Bump Rust stable toolchain
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"  # 毎週月曜日 00:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1) 最新 stable のバージョンを取得
+      - name: Get latest Rust stable version
+        id: rust
+        shell: bash
+        run: |
+          set -euo pipefail
+          TOML_URL="https://static.rust-lang.org/dist/channel-rust-stable.toml"
+          ver="$(curl -fsSL "$TOML_URL" | grep -E '^version = ' | head -n1 | sed -E 's/version = "([^"]+)".*/\1/')"
+          echo "version=$ver" >> "$GITHUB_OUTPUT"
+          echo "Latest stable: $ver"
+
+      # 2) Julia セットアップ
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: "1"
+
+      # 3) Artifacts.toml を生成
+      - name: Regenerate Artifacts.toml
+        run: |
+          julia --project=gen -e 'using Pkg; Pkg.instantiate()'
+          julia --project=gen gen/generate_Artifacts_toml.jl "${{ steps.rust.outputs.version }}"
+
+      # 4) README の "Provides Rust X.Y.Z" も更新
+      - name: Update README version line
+        shell: bash
+        run: |
+          set -euo pipefail
+          v="${{ steps.rust.outputs.version }}"
+          # README に "Provides Rust 1.92.0 toolchain" みたいな行がある前提
+          sed -i -E "s/Provides Rust [0-9]+\.[0-9]+\.[0-9]+ toolchain/Provides Rust ${v} toolchain/" README.md || true
+
+      # 5) 差分が無ければ何もしない
+      - name: Check diff
+        id: diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # 6) 変更があれば PR 作成
+      - name: Create pull request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bump-rust-stable-${{ steps.rust.outputs.version }}
+          title: "Bump Rust stable toolchain to ${{ steps.rust.outputs.version }}"
+          body: |
+            This PR updates RustToolChains.jl to the latest Rust stable toolchain (${{
+              steps.rust.outputs.version
+            }}), regenerating Artifacts.toml via gen/generate_Artifacts_toml.jl.
+          commit-message: "Bump Rust stable toolchain to ${{ steps.rust.outputs.version }}"
+          labels: automated

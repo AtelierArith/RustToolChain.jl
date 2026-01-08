@@ -1,0 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "rust-tool-chain-dev-container",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+	"features": {
+	    //"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+		//	"packages": "nano,git,tig,gfortran,openssh-server,build-essential,libeigen3-dev,libmpfr-dev,catch2,cmake"
+		//},
+		"ghcr.io/julialang/devcontainer-features/julia:1": {
+			"channel": "release"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"julialang.language-julia",
+				"tamasfe.even-better-toml",
+				"mhutchie.git-graph"
+			]
+		}
+	},
+
+	"remoteEnv": {
+		"JULIA_PROJECT": "@."
+	}
+}

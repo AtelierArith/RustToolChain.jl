@@ -1,6 +1,6 @@
 name = "RustToolChain"
 uuid = "e9dc52e2-edb8-4742-9783-5e542d30dbb5"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Satoshi Terasaki <terasakisatoshi.math@gmail.com>"]
 
 [deps]

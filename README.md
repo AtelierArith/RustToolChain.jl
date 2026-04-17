@@ -120,6 +120,16 @@ This package automatically checks for new Rust stable releases and creates pull 
 - Updates the version in `README.md`
 - Creates a pull request if changes are detected
 
+**Note on CI for auto-generated PRs:**
+
+PRs created by the GitHub Actions workflow may not start the `pull_request` CI jobs automatically. If the required checks are still missing, trigger CI by pushing an empty commit to the PR branch:
+
+```bash
+gh pr checkout <PR_NUMBER>
+git commit --allow-empty -m "Trigger CI for PR #<PR_NUMBER>"
+git push
+```
+
 **Manual Update:**
 
 You can manually regenerate `Artifacts.toml` for a specific Rust version:

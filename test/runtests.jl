@@ -2,6 +2,8 @@
 using Test
 using RustToolChain: RustToolChain, cargo, rustc
 
+include("generator_platforms.jl")
+
 @testset "RustToolChain" begin
     @test cargo() isa Cmd
     @test rustc() isa Cmd

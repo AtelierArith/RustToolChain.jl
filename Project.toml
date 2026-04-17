@@ -1,6 +1,6 @@
 name = "RustToolChain"
 uuid = "e9dc52e2-edb8-4742-9783-5e542d30dbb5"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["Satoshi Terasaki <terasakisatoshi.math@gmail.com>"]
 
 [deps]
@@ -12,8 +12,8 @@ julia = "1.10"
 
 [extras]
 Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
-Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
 test = ["Downloads", "TOML", "Test"]

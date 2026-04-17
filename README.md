@@ -6,7 +6,7 @@ RustToolChain.jl is a Julia package that provides Rust toolchains (especially `c
 
 ## Features
 
-- 🦀 Provides Rust 1.94.0 toolchain
+- 🦀 Provides Rust 1.94.1 toolchain
 - 📦 Automatic download and management via Julia's Artifacts system
 - 🖥️ Supports multiple platforms and architectures
 - 🚀 Simple API to execute `cargo` commands
@@ -119,6 +119,16 @@ This package automatically checks for new Rust stable releases and creates pull 
 - Regenerates `Artifacts.toml` with the new version
 - Updates the version in `README.md`
 - Creates a pull request if changes are detected
+
+**Note on CI for auto-generated PRs:**
+
+PRs created by the GitHub Actions workflow may not start the `pull_request` CI jobs automatically. If the required checks are still missing, trigger CI by pushing an empty commit to the PR branch:
+
+```bash
+gh pr checkout <PR_NUMBER>
+git commit --allow-empty -m "Trigger CI for PR #<PR_NUMBER>"
+git push
+```
 
 **Manual Update:**
 

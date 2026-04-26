@@ -53,7 +53,7 @@ jobs:
           fi
 
       # 4) Julia セットアップ（アップデート必要時のみ）
-      - uses: julia-actions/setup-julia@v2
+      - uses: julia-actions/setup-julia@v3
         if: steps.check.outputs.needs_update == 'true'
         with:
           version: "1"

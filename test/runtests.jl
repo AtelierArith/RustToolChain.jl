@@ -9,6 +9,26 @@ include("generator_platforms.jl")
     @test rustc() isa Cmd
 end
 
+@testset "unpacked dist installer" begin
+    mktempdir() do dir
+        rust_dir = joinpath(dir, "rust-test")
+        cargo_exe = "cargo" * RustToolChain.EXE_EXT
+        rustc_exe = "rustc" * RustToolChain.EXE_EXT
+
+        mkpath(joinpath(rust_dir, "cargo", "bin"))
+        mkpath(joinpath(rust_dir, "rustc", "bin"))
+        write(joinpath(rust_dir, "components"), "cargo\nrustc\n")
+        write(joinpath(rust_dir, "cargo", "bin", cargo_exe), "")
+        write(joinpath(rust_dir, "rustc", "bin", rustc_exe), "")
+
+        prefix = joinpath(rust_dir, "prefix")
+        RustToolChain._install_from_unpacked_dist!(rust_dir, prefix)
+
+        @test isfile(joinpath(prefix, "bin", cargo_exe))
+        @test isfile(joinpath(prefix, "bin", rustc_exe))
+    end
+end
+
 @testset "cargo --version" begin
     @test success(`$(cargo()) --version`)
 end

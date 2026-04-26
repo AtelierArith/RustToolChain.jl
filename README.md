@@ -85,7 +85,11 @@ run(`$(cargo()) build --release`)
 
 ## Internal Implementation
 
-This package uses Julia's Artifacts system to automatically download and manage Rust toolchains. On first use, the appropriate Rust toolchain for your platform will be automatically downloaded.
+This package uses Julia's Artifacts system to automatically download and manage Rust toolchains on Unix-like platforms. On first use, the appropriate Rust toolchain for your platform will be automatically downloaded.
+
+Windows uses a different installation path. Instead of installing the large Rust distribution tarball through Julia Artifacts, RustToolChain.jl downloads `rustup-init.exe` from `https://win.rustup.rs` and installs the Rust version recorded in `Artifacts.toml` with `rustup toolchain install --profile complete`. The installation is isolated under this package's Julia scratchspace by setting package-local `RUSTUP_HOME` and `CARGO_HOME` directories. It does not modify the user's `PATH` or the user's existing Rust installation.
+
+The `cargo()` and `rustc()` functions return commands that use the isolated Windows toolchain when no system `cargo` or `rustc` is available.
 
 ## Development
 

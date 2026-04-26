@@ -122,8 +122,8 @@ function _ensure_windows_rust_toolchain_installed()
     end
 
     if !_windows_rustup_toolchain_ready(rustup_home, cargo_home, toolchain)
-        @info "Installing isolated Windows Rust toolchain" toolchain profile = "complete"
-        run(setenv(`$rustup_path toolchain install $toolchain --profile complete --no-self-update`, env))
+        @info "Installing isolated Windows Rust toolchain" toolchain profile = "default"
+        run(setenv(`$rustup_path toolchain install $toolchain --profile default --no-self-update`, env))
         run(setenv(`$rustup_path default $toolchain`, env))
     end
 

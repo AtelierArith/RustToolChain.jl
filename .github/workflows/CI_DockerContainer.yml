@@ -23,7 +23,7 @@ jobs:
         arch:
           - x64
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Test in Julia docker
         run: |
           docker run --rm -v ${{ github.workspace }}:/app -w /app julia:${{ matrix.version }} bash -lc '

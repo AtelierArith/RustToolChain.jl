@@ -39,8 +39,8 @@ winget install -e --id Microsoft.VisualStudio.2022.BuildTools `
 | Flag / value | Purpose |
 | --- | --- |
 | `Microsoft.VisualStudio.2022.BuildTools` | Installs [Visual Studio 2022 Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) (no full IDE) |
-| `Microsoft.VisualStudio.Workload.VCTools` | Adds the C++ build tools workload (MSVC + linker) |
-| `--includeRecommended` | Pulls in recommended components, including a Windows SDK |
+| `Microsoft.VisualStudio.Workload.VCTools` | Adds the C++ build tools workload (MSVC + linker); see [workload ID docs](https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools) |
+| `--includeRecommended` | Pulls in recommended components, including MSVC x64/x86 tools and a Windows SDK |
 | `--wait --passive` | Runs a non-interactive install and waits until it finishes |
 
 Notes:
@@ -65,6 +65,13 @@ note: the msvc targets depend on the msvc linker but `link.exe` was not found
 ```
 
 RustToolChain.jl cannot work around this: the MSVC linker and Windows SDK are host system components, not part of the Rust distribution that this package downloads.
+
+#### References
+
+- [rustup book: MSVC prerequisites](https://rust-lang.github.io/rustup/installation/windows-msvc.html) — why Rust's `msvc` target needs Visual Studio / Build Tools (and an alternative winget example)
+- [Microsoft Learn: Use command-line parameters to install Visual Studio](https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio) — official `winget install --id ... --override "--add ..."` pattern, plus `--wait`, `--passive`, and `--includeRecommended`
+- [Microsoft Learn: Build Tools workload and component IDs](https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools) — `Microsoft.VisualStudio.Workload.VCTools` ("Desktop development with C++") and its recommended components (MSVC, Windows SDK)
+- [Build Tools for Visual Studio download](https://visualstudio.microsoft.com/visual-cpp-build-tools/) — GUI installer entry point
 
 ## Installation
 

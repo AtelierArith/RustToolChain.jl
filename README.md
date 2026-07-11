@@ -19,7 +19,15 @@ RustToolChain.jl is a Julia package that provides Rust toolchains (especially `c
 
 ### Preparation (Windows users only)
 
-Windows users need to run the following in an Administrator PowerShell to install the required build tools:
+RustToolChain.jl installs an isolated Rust toolchain (`cargo`, `rustc`, and related tools) for you.
+It does **not** provide a C/C++ linker or the Windows SDK.
+
+On Windows this package uses the `x86_64-pc-windows-msvc` target, so linking still requires Microsoft's **MSVC build tools** (for example `link.exe`) and a Windows SDK.
+Install these **once** on the machine before building Rust projects.
+
+#### Option A: winget (recommended)
+
+Open **PowerShell or Command Prompt as Administrator**, then run:
 
 ```ps
 winget install -e --id Microsoft.VisualStudio.2022.BuildTools `
@@ -27,6 +35,43 @@ winget install -e --id Microsoft.VisualStudio.2022.BuildTools `
   --accept-package-agreements `
   --override "--wait --passive --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
 ```
+
+| Flag / value | Purpose |
+| --- | --- |
+| `Microsoft.VisualStudio.2022.BuildTools` | Installs [Visual Studio 2022 Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) (no full IDE) |
+| `Microsoft.VisualStudio.Workload.VCTools` | Adds the C++ build tools workload (MSVC + linker); see [workload ID docs](https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools) |
+| `--includeRecommended` | Pulls in recommended components, including MSVC x64/x86 tools and a Windows SDK |
+| `--wait --passive` | Runs a non-interactive install and waits until it finishes |
+
+Notes:
+
+- The same command can also add the C++ workload if Build Tools are already installed without it (`winget install` + `--override` modifies the existing product).
+- After installation, open a **new** terminal (or reboot if tools are still not found) so environment variables are refreshed.
+- Use of Microsoft C++ Build Tools requires a valid Visual Studio license (Community is free for many use cases).
+
+#### Option B: Visual Studio Installer (GUI)
+
+1. Download [Build Tools for Visual Studio](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+2. Run the installer
+3. Select the **Desktop development with C++** workload
+4. Complete the install
+
+#### Why this is required
+
+Without MSVC build tools, `cargo build` typically fails with errors such as:
+
+```text
+note: the msvc targets depend on the msvc linker but `link.exe` was not found
+```
+
+RustToolChain.jl cannot work around this: the MSVC linker and Windows SDK are host system components, not part of the Rust distribution that this package downloads.
+
+#### References
+
+- [rustup book: MSVC prerequisites](https://rust-lang.github.io/rustup/installation/windows-msvc.html) — why Rust's `msvc` target needs Visual Studio / Build Tools (and an alternative winget example)
+- [Microsoft Learn: Use command-line parameters to install Visual Studio](https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio) — official `winget install --id ... --override "--add ..."` pattern, plus `--wait`, `--passive`, and `--includeRecommended`
+- [Microsoft Learn: Build Tools workload and component IDs](https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-build-tools) — `Microsoft.VisualStudio.Workload.VCTools` ("Desktop development with C++") and its recommended components (MSVC, Windows SDK)
+- [Build Tools for Visual Studio download](https://visualstudio.microsoft.com/visual-cpp-build-tools/) — GUI installer entry point
 
 ## Installation
 

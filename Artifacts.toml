@@ -129,138 +129,138 @@ os = "linux"
     url = "https://static.rust-lang.org/dist/rust-1.91.0-loongarch64-unknown-linux-gnu.tar.gz"
 [[RustToolChain]]
 arch = "aarch64"
-git-tree-sha1 = "037ccf79957413791c27aa69e395ebe155143777"
+git-tree-sha1 = "11605ad56fe107e622fec199cf74276a41c13ba1"
 lazy = true
 os = "macos"
 
     [[RustToolChain.download]]
-    sha256 = "c080e506af9cba3ca9472c17d989c2d8d5bcfc818eb5e196c77beee982788b50"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-aarch64-apple-darwin.tar.gz"
+    sha256 = "c2e6a5ef480f5715ae9874188c1fa749b6a6f90d8d911f5a3a5d768f0ac70427"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-aarch64-apple-darwin.tar.gz"
 [[RustToolChain]]
 arch = "x86_64"
-git-tree-sha1 = "b9a4c4b764c55e6f923cd0eedd472c6e6e26d445"
+git-tree-sha1 = "109e8228b2d65f2f800b777d8db03f4a0b1a2442"
 lazy = true
 os = "macos"
 
     [[RustToolChain.download]]
-    sha256 = "c19cc27b3387e2dfe7eb4b5becc75ab5acf348b2a7f2142ad3716d93a0abaa2a"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-x86_64-apple-darwin.tar.gz"
+    sha256 = "3dc9ad8ec35a9f0acd2c5ae2c80c36baf5c7010423bf339ca55709fc995885d4"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-x86_64-apple-darwin.tar.gz"
 [[RustToolChain]]
 arch = "i686"
-git-tree-sha1 = "dc81aaabef8c15564e2eea348127ce7106fb7de4"
+git-tree-sha1 = "a9d713bf7aa4ddf018838e9d577d2e86246d39ab"
 lazy = true
 libc = "glibc"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "9a3ef03fa419d662fbaf9b152a81db96379781771e6853ca06e31215fb177449"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-i686-unknown-linux-gnu.tar.gz"
+    sha256 = "d066e5dd59c15fc1c793173d53b41719162de4470b5c34041a8bc664542df375"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-i686-unknown-linux-gnu.tar.gz"
 [[RustToolChain]]
 arch = "x86_64"
-git-tree-sha1 = "525bec725a4e5379c42affd914a0e9d28373c6ea"
+git-tree-sha1 = "46b77cbbdf68f88d6d2487fd1411416545084e39"
 lazy = true
 libc = "glibc"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "b177534946e6e5422d8a75398b39625c08eabad675c08bd3d6565d3ba90c8450"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 = "eb89b20287153391c49ebcdb7fd91b683a12438d129bfb92eadcc495545af3a7"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-x86_64-unknown-linux-gnu.tar.gz"
 [[RustToolChain]]
 arch = "aarch64"
-git-tree-sha1 = "b646d18c0853d98f1649c1a29e0818ea77c0be18"
+git-tree-sha1 = "1766d905ba41987dccfa65efe74d92fb0b7cdafc"
 lazy = true
 libc = "glibc"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "212cebf45b0669b2176eb08ffa17c90b07f9de2689d6aae3604d78699fa4f5c2"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-aarch64-unknown-linux-gnu.tar.gz"
+    sha256 = "70fb01b4894d56fad34c260ce63aee647589be57a26ab33730110d8228cbcf02"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-aarch64-unknown-linux-gnu.tar.gz"
 [[RustToolChain]]
 arch = "armv6l"
 call_abi = "eabihf"
-git-tree-sha1 = "5d6dc2932991409edd5d7acc332fde1612e74ffd"
+git-tree-sha1 = "1a4e0dcfd92d651db4e9db5b238168ebc31812b9"
 lazy = true
 libc = "glibc"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "c0c4b52bf5614dfcf6b9e94876f97509c71831fc09b8f0f0e228e13ce896ea92"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-arm-unknown-linux-gnueabihf.tar.gz"
+    sha256 = "180e487a1f7abaeda374b942d369dd7faa4364b1267629d48552d9a17a5bc4ab"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-arm-unknown-linux-gnueabihf.tar.gz"
 [[RustToolChain]]
 arch = "armv7l"
 call_abi = "eabihf"
-git-tree-sha1 = "daef792430dea0aa7395ea889b4cedb05cf793f3"
+git-tree-sha1 = "7d480775071c082d66fa6645fc8b1b6d6738ccf6"
 lazy = true
 libc = "glibc"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "59320d46850c750b0a0d3e49939c00c3eed9917fab9a633300fb4d04bd8cfebc"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-armv7-unknown-linux-gnueabihf.tar.gz"
+    sha256 = "2f9dfd76694efcf391f6d4947e97be17d1f469c9e989ed194660ddd85877ca60"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-armv7-unknown-linux-gnueabihf.tar.gz"
 [[RustToolChain]]
 arch = "powerpc64le"
-git-tree-sha1 = "36863161f1a94f546c21d57e809e8105e465d6a7"
+git-tree-sha1 = "247eaeafe66885b05a9b285eb41d6403961e79e8"
 lazy = true
 libc = "glibc"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "4cde26acb968f98fdb2f7f52e7f78b75a24afdea38abed7217e1cd02c6acbe06"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-powerpc64le-unknown-linux-gnu.tar.gz"
+    sha256 = "a8d3f487d07cebc48ce03ad66a970a5f5138a5c1e7c7cec12fb9b6e47a24bf1a"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-powerpc64le-unknown-linux-gnu.tar.gz"
 [[RustToolChain]]
 arch = "riscv64"
-git-tree-sha1 = "97def93d78e8d771cb7f68dd873064a0957b5daf"
+git-tree-sha1 = "cf2d0d0112665451fa6700a0ea72bc708654af74"
 lazy = true
 libc = "glibc"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "b4c54315491239d2a4816535cea22a57ad1021e2529812ccfc938e64c53da276"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-riscv64gc-unknown-linux-gnu.tar.gz"
+    sha256 = "be239392f7112f6a81f20c9e715d5743319a8b773592e027ad800d73527d8fae"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-riscv64gc-unknown-linux-gnu.tar.gz"
 [[RustToolChain]]
 arch = "x86_64"
-git-tree-sha1 = "fb62e88e017cb9bd0bfb8e4037894813631dec0d"
+git-tree-sha1 = "37912df6cedd175ea82f25df850f7bc4c1d99fe1"
 lazy = true
 libc = "musl"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "12404d68457d3344877fbba3fde2c68743cd200fc70475451568e18076cc2a3d"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-x86_64-unknown-linux-musl.tar.gz"
+    sha256 = "675bb2d574efc64da0563a9cb70cc017560394c5938e04c92987cad383299e8d"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-x86_64-unknown-linux-musl.tar.gz"
 [[RustToolChain]]
 arch = "aarch64"
-git-tree-sha1 = "4e040b9ee7ebd072314d485246f65fa3754b5f1f"
+git-tree-sha1 = "427a30eae03d128f3a120ec233c367329881f420"
 lazy = true
 libc = "musl"
 os = "linux"
 
     [[RustToolChain.download]]
-    sha256 = "9e936f24cfd76db8a45ab352919336978531c0fb4eab7a7bdecc76b9562fcbdb"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-aarch64-unknown-linux-musl.tar.gz"
+    sha256 = "28efcf4ee31235eb5f7820dadba46400ab9dbbb030719e7a2ab284b02c8cbf82"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-aarch64-unknown-linux-musl.tar.gz"
 [[RustToolChain]]
 arch = "x86_64"
-git-tree-sha1 = "6c8a54fb0897d8bb7fb37a2d0d01a7dc823efd7d"
+git-tree-sha1 = "e244deb93570b9b98099a2b1456d47d7523156f7"
 lazy = true
 os = "freebsd"
 
     [[RustToolChain.download]]
-    sha256 = "8f5f247b7195a8925c092949c4eea96a6228d67e643dc10d97b1ed7c17e4c433"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-x86_64-unknown-freebsd.tar.gz"
+    sha256 = "77101232e3769395e99c0e663d2c8beb3d4127857945cf7c812c1886ba823b8f"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-x86_64-unknown-freebsd.tar.gz"
 [[RustToolChain]]
 arch = "i686"
-git-tree-sha1 = "334cc1bef1b9bcbc3d599e87fb4b99260d2f45ab"
+git-tree-sha1 = "42d12bda7d753ee87874888dd17fe8e899d46bb1"
 lazy = true
 os = "windows"
 
     [[RustToolChain.download]]
-    sha256 = "b3b4fd634c2754a60369d3e1f2756068fc2cba9a1ce085b53f53c3372a60d315"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-i686-pc-windows-msvc.tar.gz"
+    sha256 = "dbb4a79877d9f587f25ccf2ce47f86c978c32e1949fe20b22aa5d56036e2821d"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-i686-pc-windows-msvc.tar.gz"
 [[RustToolChain]]
 arch = "x86_64"
-git-tree-sha1 = "315f5763fa1509c0fb7d6bf4df9ab72448eab9ff"
+git-tree-sha1 = "c2a9d215399e352d2ca2a10db58ed2ed1b54a532"
 lazy = true
 os = "windows"
 
     [[RustToolChain.download]]
-    sha256 = "0f96cd17def778e6f60c1c9bef6a08b9557d797146c7b543c93b95df5cbe64ee"
-    url = "https://static.rust-lang.org/dist/rust-1.96.1-x86_64-pc-windows-msvc.tar.gz"
+    sha256 = "6de625dfeeed5a83d4c45f4ee9b0d6bc7da604d64c333649b6573841f751ae66"
+    url = "https://static.rust-lang.org/dist/rust-1.97.0-x86_64-pc-windows-msvc.tar.gz"

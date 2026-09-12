@@ -30,7 +30,7 @@ Install these **once** on the machine before building Rust projects.
 Open **PowerShell or Command Prompt as Administrator**, then run:
 
 ```ps
-winget install -e --id Microsoft.VisualStudio.2022.BuildTools `
+winget install -e --source winget --id Microsoft.VisualStudio.2022.BuildTools `
   --accept-source-agreements `
   --accept-package-agreements `
   --override "--wait --passive --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
